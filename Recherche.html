@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Résultat de recherche</title>
+    <link rel="stylesheet" href="foot.css">
+</head>
+
+<body>
+
+    <header class="club-header">
+        <a href="real.html" class="top-btn">← Retour</a>
+        <h1>Résultat de recherche</h1>
+        <a href="barca.html" class="top-btn">FC Barcelone →</a>
+    </header>
+
+    <main class="club-page">
+
+        <section class="full-section">
+            <h2>Votre recherche</h2>
+
+            <p id="resultat"></p>
+
+            <div id="contenu-resultat"></div>
+        </section>
+
+    </main>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const mot = params.get("mot");
+
+        document.getElementById("resultat").innerHTML =
+            "Vous avez recherché : <strong>" + mot + "</strong>";
+
+        let contenu = "";
+
+        if (mot.toLowerCase().includes("zidane")) {
+            contenu = `
+                <h3>Zinedine Zidane</h3>
+                <p>Zidane est l’un des plus grands joueurs et entraîneurs de l’histoire du Real Madrid. Il a remporté plusieurs Ligues des Champions comme coach.</p>
+            `;
+        }
+
+        else if (mot.toLowerCase().includes("palmares")) {
+            contenu = `
+                <h3>Palmarès du Real Madrid</h3>
+                <p>Le Real Madrid possède 15 Ligues des Champions et 36 Liga, ce qui en fait l’un des clubs les plus titrés du monde.</p>
+            `;
+        }
+
+        else if (mot.toLowerCase().includes("arbeloa")) {
+            contenu = `
+                <h3>Álvaro Arbeloa</h3>
+                <p>Arbeloa est l’entraîneur actuel du Real Madrid et ancien défenseur emblématique du club.</p>
+            `;
+        }
+
+        else {
+            contenu = `
+                <h3>Aucun résultat trouvé</h3>
+                <p>Essayez avec : Zidane, Arbeloa, Palmarès, Coach, Ligue des Champions...</p>
+            `;
+        }
+
+        document.getElementById("contenu-resultat").innerHTML = contenu;
+    </script>
+
+</body>
+</html>
