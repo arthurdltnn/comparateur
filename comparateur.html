@@ -10,23 +10,23 @@
 <body>
 
     <header class="club-header">
+        
         <a href="index.html" class="top-btn">← Accueil</a>
+        
         <h1>Comparateur</h1>
-        <a href="real.html" class="top-btn">Real Madrid →</a>
-    </header>
-    
-    <section class="search-box">
-        <form method="get" action="comparateur.html">
-            <input 
-                type="text" 
-                name="recherche" 
-                placeholder="Rechercher : palmarès, coach, président..."
+       
+        <form method="get" action="comparateur.html" class="search-header">
+            <input
+                type="text"
+                name="recherche"
+                placeholder="Rechercher..."
                 required
             >
-            <button type="submit">Rechercher</button>
+            <button type="submit">OK</button>
         </form>
-    </section>
 
+    </header>
+    
     <main class="club-page">
 
         <section class="full-section">
@@ -59,7 +59,6 @@
 
     </main>
 
-    <!-- SCRIPT POUR LIRE LE GET -->
     <script>
         const params = new URLSearchParams(window.location.search);
         const recherche = params.get("recherche");
