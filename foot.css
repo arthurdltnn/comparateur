@@ -173,6 +173,46 @@ body {
         text-align: center;
     }
 
+.search-box {
+    width: 100%;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.search-box form {
+    display: inline-flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.search-box input {
+    width: 380px;
+    padding: 14px 18px;
+    border: 2px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #2563eb;
+}
+
+.search-box button {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2563eb;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #1d4ed8;
+}
+
     .club-header h1 {
         order: -1;
     }
