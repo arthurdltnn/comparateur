@@ -173,47 +173,36 @@ body {
         text-align: center;
     }
 
-.search-box {
-    width: 100%;
-    text-align: center;
-    margin: 30px 0;
-}
-
-.search-box form {
-    display: inline-flex;
-    gap: 15px;
+.search-header {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
     align-items: center;
 }
 
-.search-box input {
-    width: 380px;
-    padding: 14px 18px;
-    border: 2px solid #d1d5db;
-    border-radius: 10px;
-    font-size: 16px;
-    outline: none;
-}
-
-.search-box input:focus {
-    border-color: #2563eb;
-}
-
-.search-box button {
-    padding: 14px 24px;
+.search-header input {
+    padding: 12px 16px;
     border: none;
     border-radius: 10px;
-    background-color: #2563eb;
+    outline: none;
+    width: 220px;
+    font-size: 15px;
+}
+
+.search-header button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.12);
     color: white;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.search-box button:hover {
-    background-color: #1d4ed8;
-}
-
-    .club-header h1 {
-        order: -1;
-    }
+.search-header button:hover {
+    background-color: rgba(255,255,255,0.22);
 }
