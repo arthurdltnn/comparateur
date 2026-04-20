@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Comparateur de Clubs</title>
+    <link rel="stylesheet" href="foot.css">
+</head>
+
+<body>
+
+    <!-- HEADER même style que tes autres pages -->
+    <header class="club-header">
+        <a href="index.html" class="top-btn">← Accueil</a>
+        <h1>Comparateur</h1>
+        <a href="real.html" class="top-btn">Real Madrid →</a>
+    </header>
+
+    <!-- BARRE DE RECHERCHE EN GET -->
+    <section class="search-box">
+        <form method="get" action="comparateur.html">
+            <input 
+                type="text" 
+                name="recherche" 
+                placeholder="Rechercher : palmarès, coach, président..."
+                required
+            >
+            <button type="submit">Rechercher</button>
+        </form>
+    </section>
+
+    <main class="club-page">
+
+        <section class="full-section">
+            <h2>Résultat de recherche</h2>
+
+            <p id="resultat-recherche"></p>
+
+            <div id="contenu-resultat"></div>
+        </section>
+
+        <section class="double-section">
+
+            <article class="big-card">
+                <h2>Real Madrid</h2>
+                <p>
+                    Club fondé en 1902, connu pour son immense palmarès européen 
+                    avec 15 Ligues des Champions.
+                </p>
+            </article>
+
+            <article class="big-card">
+                <h2>FC Barcelone</h2>
+                <p>
+                    Club fondé en 1899, célèbre pour son style de jeu unique 
+                    et ses nombreuses Liga.
+                </p>
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- SCRIPT POUR LIRE LE GET -->
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const recherche = params.get("recherche");
+
+        const resultat = document.getElementById("resultat-recherche");
+        const contenu = document.getElementById("contenu-resultat");
+
+        if (recherche) {
+            resultat.innerHTML = "Vous avez recherché : <strong>" + recherche + "</strong>";
+
+            let texte = "";
+
+            const mot = recherche.toLowerCase();
+
+            if (mot.includes("palmares")) {
+                texte = `
+                    <h3>Palmarès</h3>
+                    <p>
+                        Le Real Madrid possède davantage de Ligues des Champions,
+                        tandis que Barcelone possède aussi un palmarès immense
+                        au niveau national et international.
+                    </p>
+                `;
+            }
+
+            else if (mot.includes("coach")) {
+                texte = `
+                    <h3>Coach</h3>
+                    <p>
+                        Le coach actuel du Real Madrid est Arbeloa.
+                        Barcelone possède également une nouvelle génération
+                        d'entraîneurs très ambitieuse.
+                    </p>
+                `;
+            }
+
+            else if (mot.includes("president")) {
+                texte = `
+                    <h3>Président</h3>
+                    <p>
+                        Florentino Pérez reste l’une des figures majeures
+                        du Real Madrid.
+                    </p>
+                `;
+            }
+
+            else {
+                texte = `
+                    <h3>Aucun résultat trouvé</h3>
+                    <p>
+                        Essayez avec :
+                        palmares, coach, président
+                    </p>
+                `;
+            }
+
+            contenu.innerHTML = texte;
+        }
+        else {
+            resultat.innerHTML = "Faites une recherche pour comparer les clubs.";
+        }
+    </script>
+
+</body>
+</html>
